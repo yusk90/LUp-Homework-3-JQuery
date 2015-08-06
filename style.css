@@ -3,10 +3,7 @@ body, html {
     padding: 0;
 }
 
-#clock {
-    position: absolute;
-    left: 15px;
-    top: 15px;
+.clock {
     font-family: 'Inconsolata', Arial, sans-serif;
     font-size: 65px;
     border: 2px solid #000;
@@ -22,4 +19,8 @@ body, html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.draggable-element {
+    position: absolute;
 }

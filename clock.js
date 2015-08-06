@@ -1,11 +1,14 @@
 function Clock() {
     var $clockContainer = $('<div>'),
-        $body = $('body'),
+        $body = $(document.body),
         formatMode = 'time',
         privateMethods,
         clockID;
 
-    $clockContainer.attr('id', 'clock');
+    $clockContainer.attr({
+        id: 'clock',
+        class: 'clock'
+    });
     $body.append($clockContainer);
 
     privateMethods = {
@@ -57,26 +60,4 @@ function Clock() {
     });
 
     return this;
-}
-
-function dragAndDrop(selector) {
-    var $element = $(selector);
-
-    $element.css('position', 'absolute');
-
-    $element.on('mousedown', function (e) {
-        var clockOffsetX = e.offsetX,
-            clockOffsetY = e.offsetY,
-            moveElement;
-
-        moveElement = function (e) {
-            $element.css('top', e.clientY - clockOffsetY);
-            $element.css('left', e.clientX - clockOffsetX);
-        };
-
-        $(document).on('mousemove', moveElement);
-        $(document).on('mouseup', function (e) {
-            $(document).off('mousemove', moveElement);
-        })
-    });
 }

@@ -1,5 +1,6 @@
 $(function() {
-    var clock = new Clock;
+    var clock = new Clock(),
+        movingClock = new DragAndDrop('#clock');
     clock.init();
-    dragAndDrop('#clock');
+    movingClock.init();
 });
